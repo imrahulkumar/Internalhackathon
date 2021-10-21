@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "scripboxFrontEnd"
+  "defaultProject": "scripboxFrontEnd",
+  "cli": {
+    "analytics": false
+  }
 }

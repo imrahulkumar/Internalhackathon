@@ -1,0 +1,69 @@
+.login-wrap {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #000;
+    background: url('../../assets/cool2.png');
+    background-repeat: repeat;
+    background-size: 100%;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.box {
+	width: 500px;
+	margin: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	background: rgba(35, 35, 35, .7);
+}
+ .submit-btn {
+    margin-bottom: 16px !important;
+}
+
+.box>h1 {
+	color: #ffffff;
+	margin: 20px auto;
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+.box>input {
+	display: block;
+	background: none;
+	transition-duration: .3s;
+}
+
+.box>input[type="text"],
+.box>input[type="password"] {
+	width: 200px;
+	border: 2px solid #fff;
+	padding: 10px 15px;
+	margin: 15px auto;
+	border-radius: 40px;
+}
+
+.box>input[type="text"]:focus,
+.box>input[type="password"]:focus {
+	width: 300px;
+	border: 2px solid #99CCFF;
+}
+
+.box>input[type="submit"] {
+	width: 100px;
+	margin: 30px auto 0;
+	padding: 5px;
+	text-align: center;
+	color: #FFFFFF;
+	border-radius: 20px;
+	border: 2px solid #FFFFFF;
+}
+
+.box>input[type="submit"]:hover {
+	background: #99CCFF;
+}
+
