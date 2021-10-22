@@ -14,15 +14,17 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Date <i class="fa fa-fw fa-sort" (click)="sortByColumn('date')"></i></th>
                             <th scope="col">Title</th>
                             <th scope="col">Description</th>
                             <th scope="col">Tech</th>
-                            <th scope="col">UpVote</th>
+                            <th scope="col">UpVote <i class="fa fa-fw fa-sort" (click)="sortByColumn('upvote')"></i></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let d of hackathonList?.hackIdea; let i = index">
                             <th scope="row">{{i + 1}}</th>
+                            <td>{{d.item.createdDate | date}}</td>
                             <td>{{d.item.title}}</td>
                             <td>{{d.item.description}}</td>
                             <td>{{d.item.tech}}</td>

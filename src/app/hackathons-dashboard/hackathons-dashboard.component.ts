@@ -15,6 +15,8 @@ export class HackathonsDashboardComponent implements OnInit {
     private readonly toastr: ToastrService,
     private readonly router: Router,
     private ngxService: NgxUiLoaderService) { }
+    dateSort = 1;
+    upVoteSort = 1;
  
   hackathonList: any =[];
 
@@ -52,5 +54,28 @@ export class HackathonsDashboardComponent implements OnInit {
   logout(): void {
     localStorage.clear();
     this.router.navigate(['/login'])
+  }
+
+
+  sortByColumn(colType): void {
+    if(colType === 'date') {
+      if(this.dateSort == 1) {
+        this.hackathonList.hackIdea.sort((a,b)=> +new Date(a?.item?.createdDate)- +new Date(b?.item?.createdDate));
+        this.dateSort = -1;
+      } else {
+        this.hackathonList.hackIdea.sort((a,b)=> +new Date(b?.item?.createdDate)- +new Date(a?.item?.createdDate));
+        this.dateSort = 1;
+      }
+    
+    }
+    if(colType === 'upvote') {
+      if(this.upVoteSort == 1) {
+      this.hackathonList.hackIdea.sort((a,b)=> (a?.item?.upVote.length) - (b?.item?.upVote.length));
+      this.upVoteSort = -1;
+      } else {
+        this.hackathonList.hackIdea.sort((a,b)=> (b?.item?.upVote.length) - (a?.item?.upVote.length));
+        this.upVoteSort = 1;
+      }
+    }
   }
 }
