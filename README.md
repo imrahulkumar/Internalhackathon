@@ -12,9 +12,9 @@
    [Click Here](https://scripbox.surge.sh/)
 
 ## Backend 
-   > Backend code is developed in nodejs and mongodb.
-   > Hosted at Heroku.
-   > Link: https://scripbox-hackathon.herokuapp.com
+    > Backend code is developed in nodejs and mongodb.
+    > Hosted at Heroku.
+    > Link: https://scripbox-hackathon.herokuapp.com
 
 
 ## Postman Api Docs
