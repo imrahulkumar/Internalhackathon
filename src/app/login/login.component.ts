@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -12,7 +14,10 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private readonly api: ApiService, private readonly router: Router) { }
+  constructor(private readonly api: ApiService, 
+    private readonly router: Router,
+    private readonly toastr: ToastrService,
+    private ngxService: NgxUiLoaderService) { }
 
   ngOnInit(): void {
 
@@ -24,14 +29,16 @@ export class LoginComponent implements OnInit {
   }
 
   formSubmit(): void {
-  
+    this.ngxService.start();
     this.api.login(this.loginForm.value).subscribe(response => {
-      console.log('response', response);
+      this.toastr.success(response.message, 'Success');
+      this.ngxService.stop();
       localStorage.setItem('user', response.user);
       localStorage.setItem('token', response.token);
       this.router.navigate(['/hackathon-dashboard']);
     },error => {
-      console.log('error', error);
+      this.ngxService.stop();
+      this.toastr.error('Something Went Wrong', 'Error');
     })
   }
 

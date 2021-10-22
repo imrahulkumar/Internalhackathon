@@ -1,1 +1,25 @@
-<p>signup works!</p>
+<div class="login-wrap">
+	<h1 class="text-center">Employee SignUp</h1>
+	<div class="container pt-3">
+	  <div class="row justify-content-sm-center">
+		<div class="col-sm-6 col-md-4">
+		  <div class="card border-info text-center">
+			<div class="card-header">
+			  SignUp
+			</div>
+			<div class="card-body">
+			  <img src="https://placeimg.com/128/128/tech/sepia">
+			  <h4 class="text-center">Scripbox hackathons</h4>
+			  <form class="form-signin" [formGroup]="signupForm" (ngSubmit)="formSubmit()">
+				<input type="text" class="form-control mb-2" formControlName="employeeId" placeholder="Employee Id">
+				<input type="text" class="form-control mb-2" formControlName="password" placeholder="Password">
+				<button class="btn btn-lg btn-primary btn-block mb-1" [disabled]="signupForm.invalid" type="submit">Sign Up</button>
+			  </form>
+			</div>
+		  </div>
+		  <a href="#" class="float-right" [routerLink]="['/login']">login </a>
+		</div>
+	  </div>
+	</div>
+</div>
+

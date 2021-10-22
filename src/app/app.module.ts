@@ -9,6 +9,9 @@ import { HackathonsDashboardComponent } from './hackathons-dashboard/hackathons-
 import { CreateHackathonComponent } from './create-hackathon/create-hackathon.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    NgxUiLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
